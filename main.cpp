@@ -5,7 +5,7 @@
 #include "lab6/recursiveMultiplicationInPlace.cpp"
 
 #define sizesSize 15
-const int sizes[sizesSize] = {50,80,100,200,300,400,500,600,700,800,900,1000,1500,2000,3000};
+const int sizes[sizesSize] = {8,16,32,50,100,150,256,300,512,600,700,800,900,1024, 1500};
 
 void testMultiplicationWithPrint(const int size, void (*multiply)(double **, double **, double **, const int)){
     double **first = createMatrix(size, size);
@@ -82,7 +82,7 @@ void testMultiplication(
 }
 
 int main() {
-    testMultiplication(&recursiveInPlace::multiplySerial, &recursiveInPlace::multiplyParallel);
+    testMultiplication(&winograd::multiplySerial, &winograd::multiplyParallel);
     getch();
     return 0;
 }
