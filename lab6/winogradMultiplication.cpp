@@ -17,7 +17,7 @@ namespace winograd {
         for (int i = 0; i < size; ++i) {
             columnFactor[i] = second[0][i] * second[1][i];
             for (int j = 1; j < d; ++j) {
-                columnFactor[i] += second[2 * j - 1][i] * first[2 * j][i];
+                columnFactor[i] += second[2 * j - 1][i] * second[2 * j][i];
             }
         }
 
@@ -47,7 +47,7 @@ namespace winograd {
         for (int i = 0; i < size; ++i) {
             columnFactor[i] = second[0][i] * second[1][i];
             for (int j = 1; j < d; ++j) {
-                columnFactor[i] += second[2 * j - 1][i] * first[2 * j][i];
+                columnFactor[i] += second[2 * j - 1][i] * second[2 * j][i];
             }
         }
 

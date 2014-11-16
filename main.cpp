@@ -15,10 +15,6 @@ void testMultiplicationWithPrint(const int size, void (*multiply)(double **, dou
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             first[i][j] = i + 1;
-        }
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
             second[i][j] = j + 1;
         }
     }
@@ -82,7 +78,8 @@ void testMultiplication(
 }
 
 int main() {
-    testMultiplication(&winograd::multiplySerial, &winograd::multiplyParallel);
+//    testMultiplication(&winograd::multiplySerial, &winograd::multiplyParallel);
+    testMultiplicationWithPrint(8, &winograd::multiplySerial);
     getch();
     return 0;
 }
